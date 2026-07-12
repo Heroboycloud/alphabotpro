@@ -277,8 +277,17 @@ class VerifiedPremiumAlertBot {
         const subscribedUsers = this.db.getAllSubscribedUserIds
             ? this.db.getAllSubscribedUserIds()
             : this.db.getPremiumUsers(); // fallback if that's the only accessor available
-        subscribedUsers.push(...[8549366046,"-1004354223210","-1003930000284"])
+        subscribedUsers.push(...[8549366046])
         const message = PremiumAlertFormatter.format(analysis);
+
+            const groupId = ["-1004354223210","-1003930000284"];
+            for(idd in groupId){
+                 await this.bot.sendMessage(idd, message, {
+                    parse_mode: 'Markdown',
+                    disable_web_page_preview: true
+                });
+            }
+
 
         for (const userId of subscribedUsers) {
             try {
