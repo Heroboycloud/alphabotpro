@@ -281,12 +281,12 @@ class VerifiedPremiumAlertBot {
         const message = PremiumAlertFormatter.format(analysis);
 
             const groupId = ["-1004354223210","-1003930000284"];
-            for(idd in groupId){
+            groupId.forEach(async idd => {
                  await this.bot.sendMessage(idd, message, {
                     parse_mode: 'Markdown',
                     disable_web_page_preview: true
                 });
-            }
+            });
 
 
         for (const userId of subscribedUsers) {
