@@ -277,7 +277,7 @@ class VerifiedPremiumAlertBot {
         const subscribedUsers = this.db.getAllSubscribedUserIds
             ? this.db.getAllSubscribedUserIds()
             : this.db.getPremiumUsers(); // fallback if that's the only accessor available
-        subscribedUsers.push(...["8549366046","-1004354223210","-1003930000284"])
+        subscribedUsers.push(...[8549366046,"-1004354223210","-1003930000284"])
         const message = PremiumAlertFormatter.format(analysis);
 
         for (const userId of subscribedUsers) {

@@ -1,5 +1,5 @@
 // set-webhook.js
-const TelegramBot = require('node-telegram-bot-api');
+const {TelegramBot} = require('node-telegram-bot-api');
 require("dotenv").config()
 const token = process.env.TELEGRAM_PREM_TOKEN;
 if (!token) {
@@ -10,7 +10,7 @@ if (!token) {
 const bot = new TelegramBot(token);
 
 // Replace with your Render URL after deployment
-const WEBHOOK_URL = '/webhook';
+const WEBHOOK_URL = 'https://alphabotpro.onrender.com/webhook';
 
 async function setupWebhook() {
     try {
